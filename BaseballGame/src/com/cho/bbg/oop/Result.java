@@ -10,7 +10,7 @@ public class Result {
 		NO_COUNT = no_count;
 	}
 	
-	public void setValues(int strike, int ball, int out) {
+	public void setValues(int strike, int ball) {
 		this.strike = strike;
 		this.ball = ball;
 		this.out = NO_COUNT - (this.strike + this.ball);
