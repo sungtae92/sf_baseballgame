@@ -3,9 +3,7 @@ package com.cho.bbg.oop;
 public class RandomNumbers extends Numbers {
 	public RandomNumbers(int no_count) {
 		super(no_count);
-		setRandomValues();
-		
-		
+		setRandomValues();		
 	}
 	
 	

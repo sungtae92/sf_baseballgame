@@ -11,7 +11,7 @@ public class Numbers {
 
 	// true 중복값 없음, false 중복값 있음
 	public boolean insertValue(int number) {
-		boolean result = false;
+		boolean result = true;
 		for(int i =0; i <array.length; i++) {
 			if(array[i] == 0) {
 				array[i] = number;

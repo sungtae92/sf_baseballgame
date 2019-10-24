@@ -5,12 +5,12 @@ public class Game {
 		RandomNumbers rnb = new RandomNumbers(no_cnt);
 		
 		Result result = new Result(no_cnt);
-		
+		/*
 		for(int item : rnb.getArray()) {
 			System.out.print(item +", ");
 		}
 		System.out.println();
-		
+		*/
 		while(true) {
 			UserNumbers unb = new UserNumbers(no_cnt);
 			unb.setUserNumbers();
