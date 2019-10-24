@@ -11,11 +11,11 @@ public class Main {
 
 		// 0 ~ 0.9999999999
 
-		for (int i = 0; i < randomNoArray.length; i++) {
+		for (int i = 0; i < NO_COUNT; i++) {
 			int randomValue = (int) ((Math.random() * 9) + 1);
 			for (int j = 0; j < i + 1; j++) {
 				if (randomNoArray[j] == randomValue) {
-					j--;
+					i--;
 					break;
 				} else if (randomNoArray[j] == 0) {
 					randomNoArray[j] = randomValue;
@@ -34,15 +34,42 @@ public class Main {
 		 * 
 		 * scan.close();
 		 */
-		for (int i = 0; i < NO_COUNT; i++) {
-			System.out.printf("%d번 값을 입력하세요 : ", i + 1);
-			userNoArray[i] = scan.nextInt();
-			if (userNoArray[i] > 9) {
-				i--;
+
+		for (int item : randomNoArray) {
+			System.out.println(item);
+		}
+		System.out.println();
+
+		while (true) {
+			for (int i = 0; i < NO_COUNT; i++) {
+				System.out.printf("값을 입력하세요 : ");
+				userNoArray[i] = scan.nextInt();
+				if (userNoArray[i] > 9 || userNoArray[i] < 1) {
+					i--;
+				}
+			}
+
+			int s = 0, b = 0;
+
+			for (int i = 0; i < NO_COUNT; i++) { // 랜덤
+				for (int z = 0; z < NO_COUNT; z++) { // 사용자입력
+					if (randomNoArray[i] == userNoArray[z]) {
+						if (i == z) {
+							s++;
+						} else {
+							b++;
+						}
+					}
+				}
+			}
+			System.out.printf("S : %d, B : %d, O : %d\n", s, b, NO_COUNT - (s + b));
+
+			if (s == NO_COUNT) {
+				System.out.println("-- 게임 종료 - -");
+				break;
 			}
 		}
-		System.out.println(userNoArray[0]);
-		System.out.println(userNoArray[1]);
-		System.out.println(userNoArray[2]);
+		scan.close();
+
 	}
 }
